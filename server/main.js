@@ -15,6 +15,12 @@ mandamos un mensaje de control por consola para saber que pasa
 y tneemos que hacer el mensaje venga del navegador web mediante HTML y JS */
 io.on('connection', function(socket){
     console.log('Alguien se ha conectado con socket')
+    /*Aqui controlaremos los eventos del cliente mediante sockets */
+    socket.emit('messages', {
+        id: 1,
+        texto: "Welcome Stranger!",
+        autor: "Luis Fernando Hernandez Barraza"
+    });
 });
 
 server.listen(3002, function(){

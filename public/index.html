@@ -13,5 +13,16 @@
 </head>
 <body>
     <h1>Mi aplicación</h1>
+    <!--Queremos que estos mensajes se vean en nuestra pagina como un chat-->
+    <div id="messages"></div>
+    <br>
+<form onsubmit="return addMessage(this)">
+    <!--Creamos un formulario para mandar mensajes-->
+    <input type="text" id="username" placeholder="Tu nombre">
+    <input type="text" id="texto" placeholder="Cuentanos Algo">
+    <input type="submit" value="Enviar">
+
+</form>
+</div>
 </body>
 </html>
