@@ -7,14 +7,23 @@ socket.on('messages', function(data){
 });
 
 function render(data){
-    var html = `<div>
-                    <strong>${data.autor}</strong>:
-                    <em>${data.texto}</em>
-                    </div>`;
+    //Restructuramos esta seccion para que se maneje el array
+    //elem es un conjunto de cosas
+    //con ma recorremos el array
+
+    var html = data.map(function(elem, index){
+            return(`<div>
+                    <strong>${elem.autor}</strong>:
+                    <em>${elem.texto}</em>
+                    </div>`);
+    }).join(" ");
 
                 document.getElementById('messages').innerHTML = html;
 }
 
+//Cada ves que alguien precione el boton enviar en el formulario
+//El cliente emite un nuevo mensaje y manda el payload
+//Culminar el proyecto a una version Beta
 function addMessage(e){
     var payload = {
         autor: document.getElementById(username).value,
