@@ -26,8 +26,8 @@ function render(data){
 //Culminar el proyecto a una version Beta
 function addMessage(e){
     var payload = {
-        autor: document.getElementById(username).value,
-        texto: document.getElementById(texto).value
+        autor: document.getElementById('username').value,
+        texto: document.getElementById('texto').value
 
     };
     socket.emit('new-message', payload);
